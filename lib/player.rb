@@ -4,13 +4,20 @@
 module Mastermind
   # asdf class init comment
   class Player
-#    def initialize
-#      @name = 'poopstick'
-#    end
+    def initialize
+    end
 
     def input_code
-      puts "enter code"
       code = gets.chomp.upcase.split('')
+      until valid?(code)
+        puts "Enter a valid code, idiot:"
+        code = gets.chomp.upcase.split('')
+      end
+      code
+    end
+
+    def valid?(arr)
+      arr.length == 4 && arr.all? { |x| 64 < x.ord && x.ord < 71 }
     end
 
     def compare_codes(arr1, arr2)

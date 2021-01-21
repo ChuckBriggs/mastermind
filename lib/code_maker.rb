@@ -27,4 +27,17 @@ module Mastermind
 
     attr_reader :code
   end
+
+  class AICodeMaker < CodeMaker
+    def initialize
+      @code = generate_random_code
+    end
+  end
+
+  class HumanCodeMaker < CodeMaker
+    def initialize
+      puts "Enter the code:"
+      @code = input_code
+    end
+  end  
 end
