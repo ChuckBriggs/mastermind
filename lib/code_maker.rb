@@ -12,7 +12,7 @@ module Mastermind
 
     def generate_random_code
       random_code = Array.new(4)
-      random_code.map { | x | x = rand(97..102).chr }
+      random_code.map { | x | x = rand(65..70).chr }
     end
 
     def check_guess(arr1)
