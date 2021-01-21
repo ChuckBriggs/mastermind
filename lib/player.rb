@@ -19,24 +19,8 @@ module Mastermind
       results = { cows: 0, bulls: 0 }
       # Cownt the bulls
       results[:bulls] = count_bulls(arr1, arr2)
-      # i = arr1.length
-      # while i > 0 do
-      #   i -= 1
-      #   if arr2[i] == arr1[i]
-      #     arr2.delete_at(i)
-      #     arr1.delete_at(i)
-      #     results[:bulls] += 1
-      #   end
-      # end
       # Cownt the cows
       results[:cows] = count_cows(arr1, arr2)
-      # while arr1.any? do
-      #   if arr2.include?(arr1.last)
-      #     arr2.delete_at(arr2.find_index(arr1.last))
-      #     results[:cows] += 1
-      #   end
-      #   arr1.pop
-      # end
       results
     end
 
