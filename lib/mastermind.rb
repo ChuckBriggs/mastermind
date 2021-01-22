@@ -1,11 +1,6 @@
 # frozen_string_literal: true
 #require 'pry'; binding.pry #rubocop:disable all
 
-# NOTE: "Cows" and "bulls" terminology comes from the game Cows & Bulls. Cows
-#       are matches in incorrect positions, bulls are matches in their correct
-#       possition. Having an assload of methods and variables with names like
-#       "correct_color_incorrect_location_count" would have been tedious AF.
-
 require_relative 'mastermind/version'
 require_relative 'board'
 require_relative 'code_breaker'
