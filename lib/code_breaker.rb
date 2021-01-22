@@ -18,19 +18,16 @@ module Mastermind
   class AICodeBreaker < CodeBreaker
     def initialize
       @possible_solutions = Array.new
-      # @possible_solutions.push(%w(a b c d))
-      # @possible_solutions.push(%w(a b c e))
-      # @possible_solutions.push(%w(a b c f))
-      # @possible_solutions.push(%w(a b d a))
-     %w(A B C D E F).each do |a|
-       %w(A B C D E F).each do |b|
-         %w(A B C D E F).each do |c|
-           %w(A B C D E F).each do |d|
-             @possible_solutions.push([a, b, c, d])
-           end
-         end
-       end
-     end
+      %w(A B C D E F).each do |a|
+        %w(A B C D E F).each do |b|
+          %w(A B C D E F).each do |c|
+            %w(A B C D E F).each do |d|
+              @possible_solutions.push([a, b, c, d])
+            end
+          end
+        end
+      end
+      @possible_solutions = @possible_solutions.shuffle
     end
 
     def input_code
