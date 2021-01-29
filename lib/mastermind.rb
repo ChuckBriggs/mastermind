@@ -14,6 +14,7 @@ module Mastermind
 
   class Game
     def initialize
+      display_rules
       @board = Board.new
       game_type = select_game_type
       if game_type == 1
@@ -25,6 +26,13 @@ module Mastermind
       end
       @turn_counter = 0
       @winner = false
+    end
+
+    def display_rules
+      puts "\nThe game is Mastermind. Code breaker gets 12 tries before they lose. Codes are\
+            \nfour characters long. The only valid characters are \"A\" through \"F\" (not\
+            \ncase-sensitive).\
+            \n\n"
     end
 
     def play
@@ -66,7 +74,6 @@ module Mastermind
       # get breaker's guess
       guess = @code_breaker.input_guess
       # add breaker's guess to board
-#require 'pry'; binding.pry #rubocop:disable all
       @board.add_guess(guess)
       # get results of breaker's guess from maker
       results = @code_maker.check_guess(guess)
