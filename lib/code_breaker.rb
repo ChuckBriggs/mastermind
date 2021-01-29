@@ -11,7 +11,7 @@ module Mastermind
     end
 
     def learn(results)
-      p results
+      puts "\n"
     end
   end
 
@@ -36,6 +36,7 @@ module Mastermind
     end
 
     def learn(results)
+      puts "\n"
       temp = @possible_solutions.select { |x| compare_codes(x, @possible_solutions.first) == results }
       @possible_solutions = temp
     end
